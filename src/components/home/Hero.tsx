@@ -1,9 +1,27 @@
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export function Hero() {
+  const [password, setPassword] = useState("");
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const navigate = useNavigate();
+
+  const handleAdminAccess = () => {
+    if (password === "mikeisthebest") {
+      setShowPasswordModal(false);
+      setPassword("");
+      navigate("/admin");
+      toast.success("Admin access granted");
+    } else {
+      toast.error("Incorrect password");
+    }
+  };
+
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -40,24 +58,61 @@ export function Hero() {
             >
               Our Services
             </Link>
+            <button
+              onClick={() => setShowPasswordModal(true)}
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-input bg-background px-6 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-secondary hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            >
+              <Lock className="mr-2 h-4 w-4" />
+              Admin Panel
+            </button>
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 max-w-5xl mx-auto relative glass p-4 md:p-6 rounded-xl shadow-glass animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          <div className="aspect-video w-full bg-muted rounded-md overflow-hidden relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-muted-foreground">
-                {/* This will be replaced with an actual image or video */}
-                <div className="w-full h-full bg-gradient-to-br from-secondary/80 to-background flex items-center justify-center">
-                  <p className="text-center text-sm md:text-base">
-                    See how we helped increase social engagement by 300% for our clients
-                  </p>
-                </div>
-              </div>
+        <div className="mt-16 md:mt-24 max-w-5xl mx-auto relative glass p-8 md:p-10 rounded-xl shadow-glass animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+            <div className="flex flex-col items-center justify-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-primary">$170,000</h2>
+              <p className="text-muted-foreground text-lg">Revenue Generated</p>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-primary">500+</h2>
+              <p className="text-muted-foreground text-lg">Happy Clients</p>
             </div>
           </div>
         </div>
       </Container>
+
+      {/* Password Modal */}
+      {showPasswordModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="bg-card p-8 rounded-lg max-w-md w-full">
+            <h3 className="text-xl font-semibold mb-4">Admin Authentication</h3>
+            <p className="text-muted-foreground mb-4">Please enter your password to access the admin panel.</p>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password"
+              className="w-full p-3 rounded-md border border-input bg-background mb-4"
+              onKeyDown={(e) => e.key === 'Enter' && handleAdminAccess()}
+            />
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={() => setShowPasswordModal(false)}
+                className="px-4 py-2 rounded-md border border-input"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleAdminAccess}
+                className="px-4 py-2 rounded-md bg-primary text-primary-foreground"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

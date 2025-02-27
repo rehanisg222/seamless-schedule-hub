@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
 interface ServiceCardProps {
   title: string;
@@ -35,38 +36,84 @@ const ServiceCard = ({ title, description, icon: Icon, className }: ServiceCardP
 };
 
 export function Services() {
-  const services = [
-    {
-      title: "Instagram Marketing",
-      description: "Strategic content creation, audience targeting, and growth campaigns to boost your Instagram presence.",
-      icon: Instagram,
-    },
-    {
-      title: "Facebook Advertising",
-      description: "High-ROI Facebook ad campaigns with precise targeting, compelling creative, and conversion optimization.",
-      icon: Facebook,
-    },
-    {
-      title: "LinkedIn Branding",
-      description: "B2B social media strategies to establish thought leadership and generate qualified leads on LinkedIn.",
-      icon: Linkedin,
-    },
-    {
-      title: "Social Media Analytics",
-      description: "Comprehensive performance tracking with actionable insights to continually optimize your social media ROI.",
-      icon: BarChart,
-    },
-    {
-      title: "Content Creation",
-      description: "Eye-catching graphics, engaging videos, and copy that resonates with your target audience and drives engagement.",
-      icon: Camera,
-    },
-    {
-      title: "Paid Advertising",
-      description: "Multi-platform social media advertising strategies to increase brand awareness and drive qualified traffic.",
-      icon: Megaphone,
-    },
-  ];
+  // Get services from localStorage or use default
+  const getStoredServices = () => {
+    const storedServices = localStorage.getItem('services');
+    if (storedServices) {
+      return JSON.parse(storedServices);
+    }
+    
+    return [
+      {
+        title: "Instagram Marketing",
+        description: "Strategic content creation, audience targeting, and growth campaigns to boost your Instagram presence.",
+        icon: "Instagram",
+      },
+      {
+        title: "Facebook Advertising",
+        description: "High-ROI Facebook ad campaigns with precise targeting, compelling creative, and conversion optimization.",
+        icon: "Facebook",
+      },
+      {
+        title: "LinkedIn Branding",
+        description: "B2B social media strategies to establish thought leadership and generate qualified leads on LinkedIn.",
+        icon: "Linkedin",
+      },
+      {
+        title: "Social Media Analytics",
+        description: "Comprehensive performance tracking with actionable insights to continually optimize your social media ROI.",
+        icon: "BarChart",
+      },
+      {
+        title: "Content Creation",
+        description: "Eye-catching graphics, engaging videos, and copy that resonates with your target audience and drives engagement.",
+        icon: "Camera",
+      },
+      {
+        title: "Paid Advertising",
+        description: "Multi-platform social media advertising strategies to increase brand awareness and drive qualified traffic.",
+        icon: "Megaphone",
+      },
+    ];
+  };
+
+  const [services, setServices] = useState(getStoredServices());
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setServices(getStoredServices());
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    
+    // Custom event listener for updates from admin panel
+    const handleCustomEvent = (e: CustomEvent) => {
+      if (e.detail && e.detail.type === 'services-updated') {
+        setServices(getStoredServices());
+      }
+    };
+
+    window.addEventListener('services-updated' as any, handleCustomEvent as any);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('services-updated' as any, handleCustomEvent as any);
+    };
+  }, []);
+  
+  // Map string icon names to actual components
+  const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    Instagram,
+    Facebook,
+    Linkedin,
+    BarChart,
+    Camera,
+    Megaphone,
+  };
+
+  const getIcon = (iconName: string) => {
+    return iconMap[iconName] || Instagram;
+  };
 
   return (
     <section id="services" className="section-padding bg-secondary/30">
@@ -84,7 +131,7 @@ export function Services() {
               key={index}
               title={service.title}
               description={service.description}
-              icon={service.icon}
+              icon={getIcon(service.icon)}
               className="fade-in-section"
             />
           ))}

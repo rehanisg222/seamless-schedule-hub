@@ -1,20 +1,45 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
 import { CounterSection } from "@/components/home/CounterSection";
 import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
-import { useEffect } from "react";
 import { Calendar, ArrowRight } from "lucide-react";
 
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
+  const [testimonials, setTestimonials] = useState([]);
 
   // Handle scroll restoration on page load
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Load testimonials from localStorage
+  useEffect(() => {
+    const loadTestimonials = () => {
+      const storedTestimonials = localStorage.getItem('testimonials');
+      if (storedTestimonials) {
+        setTestimonials(JSON.parse(storedTestimonials));
+      }
+    };
+    
+    loadTestimonials();
+    
+    // Listen for updates
+    const handleStorageChange = () => {
+      loadTestimonials();
+    };
+    
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('testimonials-updated', handleStorageChange as any);
+    
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('testimonials-updated', handleStorageChange as any);
+    };
   }, []);
 
   return (
@@ -57,50 +82,22 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-card p-6 rounded-xl border border-border shadow-sm fade-in-section">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
-                  <span className="font-semibold">TB</span>
+            {testimonials.map((testimonial: any, index: number) => (
+              <div key={index} className="bg-card p-6 rounded-xl border border-border shadow-sm fade-in-section">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
+                    <span className="font-semibold">{testimonial.initials}</span>
+                  </div>
+                  <div>
+                    <h3 className="font-medium">{testimonial.name}</h3>
+                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-medium">Tech Brilliance</h3>
-                  <p className="text-sm text-muted-foreground">SaaS Company</p>
-                </div>
+                <p className="text-muted-foreground">
+                  "{testimonial.testimonial}"
+                </p>
               </div>
-              <p className="text-muted-foreground">
-                "Growthstermedia transformed our social media strategy. Our engagement increased by 215% and lead generation from social channels is up 180%. Their team is responsive and truly understands our market."
-              </p>
-            </div>
-            
-            <div className="bg-card p-6 rounded-xl border border-border shadow-sm fade-in-section">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
-                  <span className="font-semibold">FE</span>
-                </div>
-                <div>
-                  <h3 className="font-medium">Fashion Essentials</h3>
-                  <p className="text-sm text-muted-foreground">E-commerce Brand</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground">
-                "Since working with Growthstermedia, our Instagram following has grown from 2,000 to over 25,000 in just 6 months. Their content strategy and community management has helped us build a loyal customer base."
-              </p>
-            </div>
-            
-            <div className="bg-card p-6 rounded-xl border border-border shadow-sm fade-in-section">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
-                  <span className="font-semibold">CG</span>
-                </div>
-                <div>
-                  <h3 className="font-medium">Culinary Glow</h3>
-                  <p className="text-sm text-muted-foreground">Restaurant Chain</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground">
-                "The Facebook and Instagram ad campaigns managed by Growthstermedia delivered a 340% ROI. Their understanding of the restaurant industry and creative approach to content has been game-changing for our business."
-              </p>
-            </div>
+            ))}
           </div>
           
           <div className="mt-12 text-center">

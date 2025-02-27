@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
-import { CounterSection } from "@/components/home/CounterSection";
 import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
 import { Calendar, ArrowRight } from "lucide-react";
+import { AlchemySection } from "@/components/home/AlchemySection";
 
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
@@ -45,6 +45,7 @@ const Index = () => {
   return (
     <>
       <Hero />
+      <AlchemySection />
       <Services />
       
       {/* CTA Section */}
@@ -68,7 +69,6 @@ const Index = () => {
         </Container>
       </section>
       
-      <CounterSection />
       <TeamSection />
       
       {/* Testimonials Section */}

@@ -41,9 +41,6 @@ export function Navbar() {
     return location.pathname === path;
   };
 
-  // Get the logo path from the window object
-  const logoPath = (window as any).appLogo;
-
   return (
     <header
       className={cn(
@@ -59,15 +56,12 @@ export function Navbar() {
             to="/"
             className="flex items-center text-xl md:text-2xl font-semibold tracking-tight transition-colors"
           >
-            {logoPath && (
-              <img 
-                src={logoPath} 
-                alt="Growthstermedia Logo" 
-                className="h-8 md:h-10 mr-2" 
-              />
-            )}
+            <img 
+              src="/lovable-uploads/c545ac6d-d762-48fd-acb4-68bb43a4ee7b.png" 
+              alt="Growthstermedia Logo" 
+              className="h-10 md:h-12 mr-2" 
+            />
             <span className="sr-only">Growthstermedia Logo</span>
-            Growth<span className="text-primary">ster</span>media
           </Link>
 
           {/* Desktop Navigation */}

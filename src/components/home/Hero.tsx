@@ -1,27 +1,9 @@
 
-import { ArrowRight, Lock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
 
 export function Hero() {
-  const [password, setPassword] = useState("");
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
-  const navigate = useNavigate();
-
-  const handleAdminAccess = () => {
-    if (password === "mikeisthebest") {
-      setShowPasswordModal(false);
-      setPassword("");
-      navigate("/admin");
-      toast.success("Admin access granted");
-    } else {
-      toast.error("Incorrect password");
-    }
-  };
-
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -58,13 +40,6 @@ export function Hero() {
             >
               Our Services
             </Link>
-            <button
-              onClick={() => setShowPasswordModal(true)}
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-input bg-background px-6 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-secondary hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              <Lock className="mr-2 h-4 w-4" />
-              Admin Panel
-            </button>
           </div>
         </div>
 
@@ -81,38 +56,6 @@ export function Hero() {
           </div>
         </div>
       </Container>
-
-      {/* Password Modal */}
-      {showPasswordModal && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-card p-8 rounded-lg max-w-md w-full">
-            <h3 className="text-xl font-semibold mb-4">Admin Authentication</h3>
-            <p className="text-muted-foreground mb-4">Please enter your password to access the admin panel.</p>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter password"
-              className="w-full p-3 rounded-md border border-input bg-background mb-4"
-              onKeyDown={(e) => e.key === 'Enter' && handleAdminAccess()}
-            />
-            <div className="flex justify-end gap-2">
-              <button
-                onClick={() => setShowPasswordModal(false)}
-                className="px-4 py-2 rounded-md border border-input"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleAdminAccess}
-                className="px-4 py-2 rounded-md bg-primary text-primary-foreground"
-              >
-                Login
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

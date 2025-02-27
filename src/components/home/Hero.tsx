@@ -15,15 +15,15 @@ export function Hero() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center px-3 py-1 mb-6 rounded-full border border-border bg-secondary text-sm font-medium animate-fade-in">
             <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2"></span>
-            Transforming businesses since 2023
+            Transforming social media presence since 2023
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Elevate Your Business with Our Expert Solutions
+            Elevate Your Brand With Strategic Social Media Marketing
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            We help businesses scale effectively with our comprehensive suite of services designed to streamline operations and drive growth.
+            We help businesses grow their audience, increase engagement, and drive conversions through data-driven social media strategies.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
@@ -31,14 +31,14 @@ export function Hero() {
               to="/booking"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             >
-              Book an Appointment
+              Book a Strategy Call
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
               to="/services"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-input bg-background px-6 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-secondary hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             >
-              Learn More
+              Our Services
             </Link>
           </div>
         </div>
@@ -50,7 +50,7 @@ export function Hero() {
                 {/* This will be replaced with an actual image or video */}
                 <div className="w-full h-full bg-gradient-to-br from-secondary/80 to-background flex items-center justify-center">
                   <p className="text-center text-sm md:text-base">
-                    Hero image or video showcase will appear here
+                    See how we helped increase social engagement by 300% for our clients
                   </p>
                 </div>
               </div>

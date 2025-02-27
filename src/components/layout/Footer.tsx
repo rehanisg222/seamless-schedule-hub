@@ -5,17 +5,28 @@ import { Mail, MapPin, Phone, Instagram, Twitter, Linkedin, Facebook } from "luc
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  // Get the logo path from the window object
+  const logoPath = (window as any).appLogo;
 
   return (
     <footer className="bg-secondary pt-16 pb-10 border-t border-border">
       <Container>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">
-              Brand<span className="text-primary">Name</span>
-            </h3>
+            <div className="flex items-center">
+              {logoPath && (
+                <img 
+                  src={logoPath} 
+                  alt="Growthstermedia Logo" 
+                  className="h-8 mr-2" 
+                />
+              )}
+              <h3 className="text-lg font-semibold">
+                Growth<span className="text-primary">ster</span>media
+              </h3>
+            </div>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Providing exceptional service and solutions since 2023. Helping clients achieve their goals with innovation and excellence.
+              Helping businesses achieve exponential growth through strategic social media marketing since 2023. We turn followers into customers.
             </p>
             <div className="flex space-x-4">
               <a
@@ -74,7 +85,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/booking" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Book Appointment
+                  Book Consultation
                 </Link>
               </li>
             </ul>
@@ -85,22 +96,22 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Service One
+                  Instagram Marketing
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Service Two
+                  Facebook Advertising
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Service Three
+                  Content Creation
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Service Four
+                  Social Media Analytics
                 </Link>
               </li>
             </ul>
@@ -112,7 +123,7 @@ export function Footer() {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 text-primary shrink-0 mt-0.5" />
                 <span className="text-sm text-muted-foreground">
-                  123 Business Street, Suite 100, San Francisco, CA 94107
+                  123 Social Ave, Suite 100, San Francisco, CA 94107
                 </span>
               </li>
               <li className="flex items-center">
@@ -123,8 +134,8 @@ export function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-primary shrink-0" />
-                <a href="mailto:contact@example.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  contact@example.com
+                <a href="mailto:hello@growthstermedia.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  hello@growthstermedia.com
                 </a>
               </li>
             </ul>
@@ -133,7 +144,7 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-gray-200">
           <p className="text-center text-sm text-muted-foreground">
-            © {currentYear} BrandName. All rights reserved.
+            © {currentYear} Growthstermedia. All rights reserved.
           </p>
         </div>
       </Container>

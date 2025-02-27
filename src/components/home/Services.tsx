@@ -1,11 +1,11 @@
 
 import { 
-  Calendar, 
-  CreditCard, 
-  Users, 
-  BarChart, 
-  PhoneCall, 
-  Zap 
+  Instagram,
+  Facebook,
+  Linkedin,
+  BarChart,
+  Megaphone,
+  Camera
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
@@ -37,34 +37,34 @@ const ServiceCard = ({ title, description, icon: Icon, className }: ServiceCardP
 export function Services() {
   const services = [
     {
-      title: "Social Media Management",
-      description: "Professional management of your social media accounts to increase engagement and followers.",
-      icon: Users,
+      title: "Instagram Marketing",
+      description: "Strategic content creation, audience targeting, and growth campaigns to boost your Instagram presence.",
+      icon: Instagram,
     },
     {
-      title: "Content Creation",
-      description: "High-quality content creation for your digital platforms.",
-      icon: CreditCard,
+      title: "Facebook Advertising",
+      description: "High-ROI Facebook ad campaigns with precise targeting, compelling creative, and conversion optimization.",
+      icon: Facebook,
     },
     {
-      title: "SEO Optimization",
-      description: "Improve your search engine rankings and drive more traffic to your website.",
+      title: "LinkedIn Branding",
+      description: "B2B social media strategies to establish thought leadership and generate qualified leads on LinkedIn.",
+      icon: Linkedin,
+    },
+    {
+      title: "Social Media Analytics",
+      description: "Comprehensive performance tracking with actionable insights to continually optimize your social media ROI.",
       icon: BarChart,
     },
     {
-      title: "Ad Campaign Management",
-      description: "Strategic planning and execution of advertising campaigns across multiple platforms.",
-      icon: Calendar,
+      title: "Content Creation",
+      description: "Eye-catching graphics, engaging videos, and copy that resonates with your target audience and drives engagement.",
+      icon: Camera,
     },
     {
-      title: "24/7 Support",
-      description: "Get help whenever you need it with our round-the-clock customer support.",
-      icon: PhoneCall,
-    },
-    {
-      title: "Analytics & Reporting",
-      description: "Detailed analytics and reports to track the performance of your social media strategy.",
-      icon: Zap,
+      title: "Paid Advertising",
+      description: "Multi-platform social media advertising strategies to increase brand awareness and drive qualified traffic.",
+      icon: Megaphone,
     },
   ];
 
@@ -74,7 +74,7 @@ export function Services() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
           <p className="text-muted-foreground text-lg">
-            Comprehensive social media solutions designed to help your business thrive in today's competitive landscape.
+            Comprehensive social media solutions designed to help your business grow its online presence and drive real business results.
           </p>
         </div>
 

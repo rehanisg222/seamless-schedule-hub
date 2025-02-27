@@ -41,6 +41,9 @@ export function Navbar() {
     return location.pathname === path;
   };
 
+  // Get the logo path from the window object
+  const logoPath = (window as any).appLogo;
+
   return (
     <header
       className={cn(
@@ -54,10 +57,17 @@ export function Navbar() {
         <nav className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-xl md:text-2xl font-semibold tracking-tight transition-colors"
+            className="flex items-center text-xl md:text-2xl font-semibold tracking-tight transition-colors"
           >
-            <span className="sr-only">Company Logo</span>
-            Brand<span className="text-primary">Name</span>
+            {logoPath && (
+              <img 
+                src={logoPath} 
+                alt="Growthstermedia Logo" 
+                className="h-8 md:h-10 mr-2" 
+              />
+            )}
+            <span className="sr-only">Growthstermedia Logo</span>
+            Growth<span className="text-primary">ster</span>media
           </Link>
 
           {/* Desktop Navigation */}
@@ -80,7 +90,7 @@ export function Navbar() {
               to="/booking"
               className="ml-4 inline-flex items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             >
-              Book Appointment
+              Book Consultation
               <ChevronRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
@@ -117,7 +127,7 @@ export function Navbar() {
                 className="mt-4 w-full flex items-center justify-center rounded-md bg-primary px-4 py-3 text-md font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 animate-slide-in"
                 style={{ animationDelay: "0.4s" }}
               >
-                Book Appointment
+                Book Consultation
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Link>
             </div>

@@ -66,24 +66,5 @@ const CounterItem = ({
     </div>;
 };
 export function CounterSection() {
-  return <section className="section-padding bg-white relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-secondary/30 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/30 rounded-full blur-3xl"></div>
-      
-      <Container className="relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact in Numbers</h2>
-          <p className="text-muted-foreground text-lg">
-            We've helped hundreds of businesses achieve measurable results through our dedicated services.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <CounterItem icon={DollarSign} value={5000000} label="Revenue Generated" prefix="$" delay={0} />
-          <CounterItem icon={User} value={500} label="Happy Clients" suffix="+" delay={200} />
-          <CounterItem icon={Award} value={25} label="Industry Awards" delay={400} />
-          <CounterItem icon={Calendar} value={10000} label="Appointments Booked" suffix="+" delay={600} />
-        </div>
-      </Container>
-    </section>;
+  return;
 }

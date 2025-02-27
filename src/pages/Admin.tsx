@@ -10,9 +10,11 @@ import {
   Settings as SettingsIcon, 
   LogOut, 
   Menu, 
-  X 
+  X,
+  Layers
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ServicesManagement from "@/components/admin/ServicesManagement";
 
 // Admin Dashboard Components
 const Dashboard = () => (
@@ -25,7 +27,7 @@ const Dashboard = () => (
         { title: "Revenue", value: "$8,245", icon: CreditCard, color: "bg-purple-100 text-purple-600" },
         { title: "Growth", value: "+12%", icon: BarChart, color: "bg-orange-100 text-orange-600" },
       ].map((card, index) => (
-        <div key={index} className="bg-white p-6 rounded-lg border border-border shadow-sm">
+        <div key={index} className="bg-card p-6 rounded-lg border border-border shadow-sm">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-sm text-muted-foreground">{card.title}</p>
@@ -40,7 +42,7 @@ const Dashboard = () => (
     </div>
     
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="bg-white p-6 rounded-lg border border-border shadow-sm">
+      <div className="bg-card p-6 rounded-lg border border-border shadow-sm">
         <h3 className="text-lg font-semibold mb-4">Recent Appointments</h3>
         <div className="space-y-4">
           {[1, 2, 3].map((item) => (
@@ -59,7 +61,7 @@ const Dashboard = () => (
         <button className="mt-4 w-full text-center text-sm text-primary">View All Appointments</button>
       </div>
       
-      <div className="bg-white p-6 rounded-lg border border-border shadow-sm">
+      <div className="bg-card p-6 rounded-lg border border-border shadow-sm">
         <h3 className="text-lg font-semibold mb-4">Recent Payments</h3>
         <div className="space-y-4">
           {[1, 2, 3].map((item) => (
@@ -84,21 +86,21 @@ const Dashboard = () => (
 const Clients = () => (
   <div>
     <h2 className="text-2xl font-bold mb-6">Client Management</h2>
-    <div className="bg-white rounded-lg border border-border shadow-sm overflow-hidden">
+    <div className="bg-card rounded-lg border border-border shadow-sm overflow-hidden">
       <div className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-border">
         <h3 className="text-lg font-semibold">All Clients</h3>
         <div className="mt-2 sm:mt-0 flex gap-2">
           <input
             type="text"
             placeholder="Search clients..."
-            className="px-3 py-1 border border-border rounded-md text-sm"
+            className="px-3 py-1 bg-muted text-foreground border border-border rounded-md text-sm"
           />
           <button className="bg-primary text-primary-foreground px-4 py-1 rounded-md text-sm">Add New</button>
         </div>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-secondary text-sm">
+          <thead className="bg-muted text-sm">
             <tr>
               <th className="text-left p-4">Name</th>
               <th className="text-left p-4">Email</th>
@@ -110,7 +112,7 @@ const Clients = () => (
           </thead>
           <tbody>
             {[1, 2, 3, 4, 5].map((item) => (
-              <tr key={item} className="border-b border-border hover:bg-secondary/30 transition-colors">
+              <tr key={item} className="border-b border-border hover:bg-muted/30 transition-colors">
                 <td className="p-4">Client Name {item}</td>
                 <td className="p-4">client{item}@example.com</td>
                 <td className="p-4">(123) 456-789{item}</td>
@@ -127,7 +129,7 @@ const Clients = () => (
           </tbody>
         </table>
       </div>
-      <div className="p-4 flex justify-between items-center bg-white border-t border-border">
+      <div className="p-4 flex justify-between items-center bg-card border-t border-border">
         <p className="text-sm text-muted-foreground">Showing 1-5 of 24 clients</p>
         <div className="flex space-x-2">
           <button className="px-3 py-1 border border-border rounded-md text-sm">Previous</button>
@@ -141,11 +143,11 @@ const Clients = () => (
 const Appointments = () => (
   <div>
     <h2 className="text-2xl font-bold mb-6">Appointment Management</h2>
-    <div className="bg-white rounded-lg border border-border shadow-sm overflow-hidden">
+    <div className="bg-card rounded-lg border border-border shadow-sm overflow-hidden">
       <div className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-border">
         <h3 className="text-lg font-semibold">Upcoming Appointments</h3>
         <div className="mt-2 sm:mt-0 flex gap-2">
-          <select className="px-3 py-1 border border-border rounded-md text-sm">
+          <select className="px-3 py-1 bg-muted text-foreground border border-border rounded-md text-sm">
             <option>All Status</option>
             <option>Confirmed</option>
             <option>Pending</option>
@@ -156,7 +158,7 @@ const Appointments = () => (
       </div>
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-secondary text-sm">
+          <thead className="bg-muted text-sm">
             <tr>
               <th className="text-left p-4">Client</th>
               <th className="text-left p-4">Service</th>
@@ -168,7 +170,7 @@ const Appointments = () => (
           </thead>
           <tbody>
             {[1, 2, 3, 4, 5].map((item) => (
-              <tr key={item} className="border-b border-border hover:bg-secondary/30 transition-colors">
+              <tr key={item} className="border-b border-border hover:bg-muted/30 transition-colors">
                 <td className="p-4">Client Name {item}</td>
                 <td className="p-4">Service Type {item}</td>
                 <td className="p-4">Jul 1{item}, 2023 - 10:00 AM</td>
@@ -201,7 +203,7 @@ const Appointments = () => (
           </tbody>
         </table>
       </div>
-      <div className="p-4 flex justify-between items-center bg-white border-t border-border">
+      <div className="p-4 flex justify-between items-center bg-card border-t border-border">
         <p className="text-sm text-muted-foreground">Showing 1-5 of 18 appointments</p>
         <div className="flex space-x-2">
           <button className="px-3 py-1 border border-border rounded-md text-sm">Previous</button>
@@ -221,18 +223,18 @@ const Payments = () => (
         { title: "Pending Payments", value: "$3,240", description: "5 payments pending" },
         { title: "Average Transaction", value: "$186", description: "Up 12% from last month" },
       ].map((card, index) => (
-        <div key={index} className="bg-white p-6 rounded-lg border border-border shadow-sm">
+        <div key={index} className="bg-card p-6 rounded-lg border border-border shadow-sm">
           <p className="text-sm text-muted-foreground">{card.title}</p>
           <h3 className="text-2xl font-bold mt-1">{card.value}</h3>
           <p className="text-xs text-muted-foreground mt-1">{card.description}</p>
         </div>
       ))}
     </div>
-    <div className="bg-white rounded-lg border border-border shadow-sm overflow-hidden">
+    <div className="bg-card rounded-lg border border-border shadow-sm overflow-hidden">
       <div className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-border">
         <h3 className="text-lg font-semibold">Recent Transactions</h3>
         <div className="mt-2 sm:mt-0 flex gap-2">
-          <select className="px-3 py-1 border border-border rounded-md text-sm">
+          <select className="px-3 py-1 bg-muted text-foreground border border-border rounded-md text-sm">
             <option>All Time</option>
             <option>This Month</option>
             <option>Last Month</option>
@@ -243,7 +245,7 @@ const Payments = () => (
       </div>
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-secondary text-sm">
+          <thead className="bg-muted text-sm">
             <tr>
               <th className="text-left p-4">Transaction ID</th>
               <th className="text-left p-4">Client</th>
@@ -256,7 +258,7 @@ const Payments = () => (
           </thead>
           <tbody>
             {[1, 2, 3, 4, 5].map((item) => (
-              <tr key={item} className="border-b border-border hover:bg-secondary/30 transition-colors">
+              <tr key={item} className="border-b border-border hover:bg-muted/30 transition-colors">
                 <td className="p-4">TXN-{1000 + item}</td>
                 <td className="p-4">Client Name {item}</td>
                 <td className="p-4">Jul 1{item}, 2023</td>
@@ -292,7 +294,7 @@ const Payments = () => (
           </tbody>
         </table>
       </div>
-      <div className="p-4 flex justify-between items-center bg-white border-t border-border">
+      <div className="p-4 flex justify-between items-center bg-card border-t border-border">
         <p className="text-sm text-muted-foreground">Showing 1-5 of 32 transactions</p>
         <div className="flex space-x-2">
           <button className="px-3 py-1 border border-border rounded-md text-sm">Previous</button>
@@ -306,7 +308,7 @@ const Payments = () => (
 const SettingsPanel = () => (
   <div>
     <h2 className="text-2xl font-bold mb-6">Account Settings</h2>
-    <div className="bg-white rounded-lg border border-border shadow-sm overflow-hidden">
+    <div className="bg-card rounded-lg border border-border shadow-sm overflow-hidden">
       <div className="p-6 border-b border-border">
         <h3 className="text-lg font-semibold mb-4">Profile Information</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -315,7 +317,7 @@ const SettingsPanel = () => (
             <input
               type="text"
               defaultValue="Admin User"
-              className="w-full px-3 py-2 border border-border rounded-md"
+              className="w-full px-3 py-2 bg-muted text-foreground border border-border rounded-md"
             />
           </div>
           <div>
@@ -323,7 +325,7 @@ const SettingsPanel = () => (
             <input
               type="email"
               defaultValue="admin@example.com"
-              className="w-full px-3 py-2 border border-border rounded-md"
+              className="w-full px-3 py-2 bg-muted text-foreground border border-border rounded-md"
             />
           </div>
           <div>
@@ -331,7 +333,7 @@ const SettingsPanel = () => (
             <input
               type="tel"
               defaultValue="(123) 456-7890"
-              className="w-full px-3 py-2 border border-border rounded-md"
+              className="w-full px-3 py-2 bg-muted text-foreground border border-border rounded-md"
             />
           </div>
           <div>
@@ -339,7 +341,7 @@ const SettingsPanel = () => (
             <input
               type="text"
               defaultValue="Administrator"
-              className="w-full px-3 py-2 border border-border rounded-md"
+              className="w-full px-3 py-2 bg-muted text-foreground border border-border rounded-md"
             />
           </div>
         </div>
@@ -347,7 +349,7 @@ const SettingsPanel = () => (
           <label className="block text-sm text-muted-foreground mb-1">Bio</label>
           <textarea
             defaultValue="System administrator responsible for managing the dashboard and user accounts."
-            className="w-full px-3 py-2 border border-border rounded-md h-24"
+            className="w-full px-3 py-2 bg-muted text-foreground border border-border rounded-md h-24"
           ></textarea>
         </div>
         <button className="mt-4 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm">
@@ -362,7 +364,7 @@ const SettingsPanel = () => (
             <label className="block text-sm text-muted-foreground mb-1">Current Password</label>
             <input
               type="password"
-              className="w-full px-3 py-2 border border-border rounded-md"
+              className="w-full px-3 py-2 bg-muted text-foreground border border-border rounded-md"
             />
           </div>
           <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -370,14 +372,14 @@ const SettingsPanel = () => (
               <label className="block text-sm text-muted-foreground mb-1">New Password</label>
               <input
                 type="password"
-                className="w-full px-3 py-2 border border-border rounded-md"
+                className="w-full px-3 py-2 bg-muted text-foreground border border-border rounded-md"
               />
             </div>
             <div>
               <label className="block text-sm text-muted-foreground mb-1">Confirm New Password</label>
               <input
                 type="password"
-                className="w-full px-3 py-2 border border-border rounded-md"
+                className="w-full px-3 py-2 bg-muted text-foreground border border-border rounded-md"
               />
             </div>
           </div>
@@ -467,6 +469,7 @@ const Admin = () => {
     { path: "/admin/clients", label: "Clients", icon: Users },
     { path: "/admin/appointments", label: "Appointments", icon: Calendar },
     { path: "/admin/payments", label: "Payments", icon: CreditCard },
+    { path: "/admin/services", label: "Services", icon: Layers },
     { path: "/admin/settings", label: "Settings", icon: SettingsIcon },
   ];
   
@@ -483,7 +486,7 @@ const Admin = () => {
       <div className="fixed z-20 top-20 left-4 md:hidden">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-10 h-10 flex items-center justify-center bg-white rounded-md shadow-sm border border-border"
+          className="w-10 h-10 flex items-center justify-center bg-card rounded-md shadow-sm border border-border"
         >
           {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -492,7 +495,7 @@ const Admin = () => {
       {/* Admin Sidebar */}
       <div 
         className={cn(
-          "fixed top-16 bottom-0 left-0 w-64 bg-white border-r border-border shadow-sm transition-transform z-30 transform",
+          "fixed top-16 bottom-0 left-0 w-64 bg-card border-r border-border shadow-sm transition-transform z-30 transform",
           isSidebarOpen ? "translate-x-0" : "-translate-x-full",
           isMobileMenuOpen ? "translate-x-0" : "",
           "md:translate-x-0"
@@ -557,6 +560,7 @@ const Admin = () => {
             <Route path="/clients" element={<Clients />} />
             <Route path="/appointments" element={<Appointments />} />
             <Route path="/payments" element={<Payments />} />
+            <Route path="/services" element={<ServicesManagement />} />
             <Route path="/settings" element={<SettingsPanel />} />
             <Route path="*" element={<Navigate to="/admin" replace />} />
           </Routes>

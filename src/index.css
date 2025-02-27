@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
     
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 270 75% 75%;
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 270 30% 10%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 270 15% 15%;
+    --muted-foreground: 270 5% 75%;
     
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 270 50% 60%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 270 20% 20%;
+    --input: 270 20% 20%;
+    --ring: 270 50% 60%;
 
     --radius: 0.75rem;
   }
@@ -52,11 +52,11 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/60 backdrop-blur-lg border border-white/20 shadow-glass;
+    @apply bg-white/10 backdrop-blur-lg border border-white/10 shadow-glass;
   }
 
   .glass-dark {
-    @apply bg-black/10 backdrop-blur-lg border border-white/10 shadow-glass;
+    @apply bg-black/70 backdrop-blur-lg border border-white/5 shadow-glass;
   }
 
   .section-padding {
@@ -68,7 +68,7 @@
   }
 
   .animated-underline {
-    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
   }
 
   .fade-in-section {
@@ -92,5 +92,9 @@
 
   .counter-element::after {
     content: counter(count);
+  }
+  
+  .purple-gradient {
+    @apply bg-gradient-to-r from-purple-700 to-purple-400;
   }
 }

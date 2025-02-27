@@ -15,6 +15,9 @@ import Team from "@/pages/Team";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/NotFound";
 
+// Add our logo
+const logoPath = "/lovable-uploads/5de5d693-f719-4918-9142-ea1838742673.png";
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -41,6 +44,9 @@ const App = () => {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
+
+  // Export logo for use in other components
+  (window as any).appLogo = logoPath;
 
   return (
     <QueryClientProvider client={queryClient}>

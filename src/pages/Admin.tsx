@@ -7,7 +7,7 @@ import {
   Calendar, 
   CreditCard, 
   BarChart, 
-  Settings, 
+  Settings as SettingsIcon, 
   LogOut, 
   Menu, 
   X 
@@ -303,7 +303,7 @@ const Payments = () => (
   </div>
 );
 
-const Settings = () => (
+const SettingsPanel = () => (
   <div>
     <h2 className="text-2xl font-bold mb-6">Account Settings</h2>
     <div className="bg-white rounded-lg border border-border shadow-sm overflow-hidden">
@@ -467,7 +467,7 @@ const Admin = () => {
     { path: "/admin/clients", label: "Clients", icon: Users },
     { path: "/admin/appointments", label: "Appointments", icon: Calendar },
     { path: "/admin/payments", label: "Payments", icon: CreditCard },
-    { path: "/admin/settings", label: "Settings", icon: Settings },
+    { path: "/admin/settings", label: "Settings", icon: SettingsIcon },
   ];
   
   const isActive = (path: string) => {
@@ -557,7 +557,7 @@ const Admin = () => {
             <Route path="/clients" element={<Clients />} />
             <Route path="/appointments" element={<Appointments />} />
             <Route path="/payments" element={<Payments />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings" element={<SettingsPanel />} />
             <Route path="*" element={<Navigate to="/admin" replace />} />
           </Routes>
         </Container>

@@ -1,26 +1,27 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --background: 240 70% 5%; /* Dark theme background #0f0e24 */
+    --foreground: 0 0% 100%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 240 70% 8%;
+    --card-foreground: 0 0% 100%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 240 70% 8%;
+    --popover-foreground: 0 0% 100%;
     
     --primary: 270 50% 40%; /* Updated to purple */
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 218 13% 94%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 240 30% 15%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 218 13% 94%;
-    --muted-foreground: 222 25% 50%;
+    --muted: 240 30% 15%;
+    --muted-foreground: 210 20% 80%;
     
     --accent: 270 50% 40%; /* Updated to purple */
     --accent-foreground: 0 0% 100%;
@@ -28,8 +29,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 222 15% 85%;
-    --input: 222 15% 85%;
+    --border: 240 30% 20%;
+    --input: 240 30% 20%;
     --ring: 270 50% 40%; /* Updated to purple */
 
     --radius: 0.75rem;
@@ -51,7 +52,7 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-glass;
+    @apply bg-card/80 backdrop-blur-lg border border-white/10 shadow-glass;
   }
 
   .glass-dark {
@@ -78,6 +79,7 @@
     @apply opacity-100 translate-y-0;
   }
 
+  /* Updated counter animation */
   .counter-element {
     counter-reset: count 0;
     animation: counter-animation 2s forwards;

@@ -27,6 +27,20 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
     };
   }, [isOpen]);
 
+  // Script for Calendly
+  useEffect(() => {
+    if (mounted) {
+      const script = document.createElement('script');
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [mounted]);
+
   if (!mounted) return null;
 
   return (
@@ -46,7 +60,7 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-secondary text-foreground hover:bg-secondary/80 transition-colors"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-secondary text-foreground hover:bg-secondary/80 transition-colors z-10"
           aria-label="Close modal"
         >
           <X size={16} />
@@ -57,14 +71,11 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
           <p className="text-center text-muted-foreground mb-6">Select a convenient time slot for your appointment.</p>
           
           <div className="calendly-wrapper h-[600px] border border-border rounded-md overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center">
-              <p className="text-muted-foreground text-center p-8">
-                Calendly integration will be embedded here.<br />
-                <span className="text-sm block mt-2">
-                  (This is a placeholder for the actual Calendly embed which requires a Calendly account.)
-                </span>
-              </p>
-            </div>
+            <div 
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/growthstermedia/30min"
+              style={{ minWidth: '320px', height: '600px' }}
+            ></div>
           </div>
         </div>
       </div>

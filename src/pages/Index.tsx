@@ -6,7 +6,6 @@ import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
 import { Calendar, ArrowRight } from "lucide-react";
-import { AlchemySection } from "@/components/home/AlchemySection";
 
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
@@ -45,7 +44,6 @@ const Index = () => {
   return (
     <>
       <Hero />
-      <AlchemySection />
       <Services />
       
       {/* CTA Section */}

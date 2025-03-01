@@ -5,11 +5,12 @@ import { Services } from "@/components/home/Services";
 import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
-import { Calendar, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const [testimonials, setTestimonials] = useState([]);
+  const [calendarLoaded, setCalendarLoaded] = useState(false);
 
   // Handle scroll restoration on page load
   useEffect(() => {
@@ -41,28 +42,44 @@ const Index = () => {
     };
   }, []);
 
+  // Load Calendly script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.onload = () => setCalendarLoaded(true);
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <>
       <Hero />
       <Services />
       
-      {/* CTA Section */}
+      {/* CTA Section with Embedded Calendly */}
       <section className="py-16 bg-primary text-primary-foreground">
         <Container>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <div className="mb-6 md:mb-0">
+          <div className="flex flex-col">
+            <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold">Ready to Grow Your Social Media Presence?</h2>
-              <p className="mt-2 text-primary-foreground/80">
+              <p className="mt-2 text-primary-foreground/80 max-w-2xl mx-auto">
                 Book a free strategy call now and discover how we can boost your brand's online visibility.
               </p>
             </div>
-            <button
-              onClick={() => setIsAppointmentModalOpen(true)}
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-white px-6 py-3 text-sm font-medium text-primary shadow-sm transition-colors hover:bg-white/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              <Calendar className="mr-2 h-4 w-4" />
-              Schedule Strategy Call
-            </button>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+              <div 
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/growthstermedia/30min"
+                style={{ minWidth: '320px', height: '630px' }}
+              ></div>
+            </div>
           </div>
         </Container>
       </section>

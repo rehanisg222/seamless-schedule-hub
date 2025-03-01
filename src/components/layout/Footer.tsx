@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Container } from "@/components/ui/Container";
 import { Mail, MapPin, Phone, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
@@ -9,7 +8,7 @@ export function Footer() {
   const logoPath = (window as any).appLogo;
 
   return (
-    <footer className="bg-blue-950 pt-16 pb-10 border-t border-blue-900">
+    <footer style={{ backgroundColor: "#300319" }} className="pt-16 pb-10 border-t border-opacity-20 border-blue-900">
       <Container>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
@@ -142,7 +141,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-blue-900">
+        <div className="mt-12 pt-6 border-t border-opacity-20 border-blue-900">
           <p className="text-center text-sm text-blue-300">
             © {currentYear} Growthstermedia. All rights reserved.
           </p>

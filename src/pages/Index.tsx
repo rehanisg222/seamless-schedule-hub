@@ -9,37 +9,11 @@ import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
-  const [testimonials, setTestimonials] = useState([]);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
 
   // Handle scroll restoration on page load
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  // Load testimonials from localStorage
-  useEffect(() => {
-    const loadTestimonials = () => {
-      const storedTestimonials = localStorage.getItem('testimonials');
-      if (storedTestimonials) {
-        setTestimonials(JSON.parse(storedTestimonials));
-      }
-    };
-    
-    loadTestimonials();
-    
-    // Listen for updates
-    const handleStorageChange = () => {
-      loadTestimonials();
-    };
-    
-    window.addEventListener('storage', handleStorageChange);
-    window.addEventListener('testimonials-updated', handleStorageChange as any);
-    
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-      window.removeEventListener('testimonials-updated', handleStorageChange as any);
-    };
   }, []);
 
   // Load Calendly script
@@ -61,6 +35,61 @@ const Index = () => {
     <>
       <Hero />
       <Services />
+      
+      {/* Stats Section - Based on first attachment */}
+      <section className="py-16" style={{ backgroundColor: "#300319" }}>
+        <Container>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">TOTAL REVENUE GENERATED</h2>
+            <h3 className="text-5xl md:text-7xl font-bold text-pink-500 mb-8">$63.4 MILLION</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-blue-950 p-6 rounded-lg text-center">
+              <h4 className="text-xl font-bold text-white mb-4">CLIENTS HELPED</h4>
+              <p className="text-4xl md:text-6xl font-bold text-pink-500">57</p>
+            </div>
+            
+            <div className="bg-blue-950 p-6 rounded-lg text-center">
+              <h4 className="text-xl font-bold text-white mb-4">TOTAL AD SPEND</h4>
+              <p className="text-4xl md:text-6xl font-bold text-pink-500">$14.7M</p>
+            </div>
+            
+            <div className="bg-blue-950 p-6 rounded-lg text-center">
+              <h4 className="text-xl font-bold text-white mb-4">OFFICES</h4>
+              <p className="text-4xl md:text-6xl font-bold text-pink-500">0</p>
+            </div>
+            
+            <div className="bg-blue-950 p-6 rounded-lg text-center">
+              <h4 className="text-xl font-bold text-white mb-4">SERVICES OFFER</h4>
+              <p className="text-4xl md:text-6xl font-bold text-pink-500">1</p>
+            </div>
+          </div>
+          
+          <div className="mt-12 flex flex-col md:flex-row gap-8 items-center justify-between">
+            <div className="max-w-xl text-white">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Philosophy</h3>
+              <p className="text-lg mb-4">
+                At Growthstermedia, we've worked with the best in the industry to produce millions of dollars in return on ad spend. We do away with inefficiencies and formalities that plague most agencies.
+              </p>
+              <p className="text-lg mb-6">
+                Our client case studies have become legendary, our waiting list is longer than your complaints with your current agency, and we look for a very specific kind of client.
+              </p>
+              <p className="text-xl font-semibold">
+                Maybe that's you: it would be our honor to find out. Schedule your FREE discovery call below.
+              </p>
+            </div>
+            
+            <a 
+              href="/booking" 
+              className="px-8 py-4 rounded-full bg-purple-600 text-white text-lg font-medium hover:bg-purple-700 transition-colors text-center"
+            >
+              Speak To Our Team Today
+              <div className="text-sm">Schedule Your FREE Audit Call Now</div>
+            </a>
+          </div>
+        </Container>
+      </section>
       
       {/* CTA Section with Embedded Calendly */}
       <section className="py-16 bg-primary text-primary-foreground">
@@ -85,47 +114,6 @@ const Index = () => {
       </section>
       
       <TeamSection />
-      
-      {/* Testimonials Section */}
-      <section className="section-padding bg-secondary/30">
-        <Container>
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-muted-foreground text-lg">
-              Hear from businesses that have transformed their social media presence with Growthstermedia.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial: any, index: number) => (
-              <div key={index} className="bg-card p-6 rounded-xl border border-border shadow-sm fade-in-section">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary mr-4">
-                    <span className="font-semibold">{testimonial.initials}</span>
-                  </div>
-                  <div>
-                    <h3 className="font-medium">{testimonial.name}</h3>
-                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground">
-                  "{testimonial.testimonial}"
-                </p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <button
-              onClick={() => setIsAppointmentModalOpen(true)}
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              Join Our Success Stories
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
-          </div>
-        </Container>
-      </section>
       
       <AppointmentModal
         isOpen={isAppointmentModalOpen}

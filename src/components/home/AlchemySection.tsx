@@ -34,7 +34,7 @@ export function AlchemySection() {
           <div className="relative flex justify-center md:justify-end fade-in-section">
             <div className="relative z-10 w-full max-w-md">
               <img 
-                src="/lovable-uploads/fe50997e-c6b6-4ee4-b24e-3a521ae477d0.png" 
+                src="/lovable-uploads/506d9731-da39-4092-84d7-4b0c42a6356d.png" 
                 alt="Digital Alchemist" 
                 className="w-full h-auto rounded-md"
               />

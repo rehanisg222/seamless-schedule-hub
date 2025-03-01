@@ -57,7 +57,7 @@ export function Navbar() {
             className="flex items-center text-xl md:text-2xl font-semibold tracking-tight transition-colors"
           >
             <img 
-              src="/lovable-uploads/c545ac6d-d762-48fd-acb4-68bb43a4ee7b.png" 
+              src="/lovable-uploads/264ff834-cdbd-4364-9c21-d1670606e076.png" 
               alt="Growthstermedia Logo" 
               className="h-10 md:h-12 mr-2" 
             />

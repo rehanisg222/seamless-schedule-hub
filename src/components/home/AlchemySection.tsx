@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export function AlchemySection() {
   return (
-    <section className="py-16 md:py-24 bg-secondary/20 overflow-hidden">
+    <section className="py-16 md:py-24 bg-secondary overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="fade-in-section">
@@ -39,8 +39,8 @@ export function AlchemySection() {
                 className="w-full h-auto rounded-md"
               />
             </div>
-            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/20 rounded-full blur-3xl z-0"></div>
-            <div className="absolute -top-8 -left-8 w-64 h-64 bg-primary/20 rounded-full blur-3xl z-0"></div>
+            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0"></div>
+            <div className="absolute -top-8 -left-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0"></div>
           </div>
         </div>
       </Container>

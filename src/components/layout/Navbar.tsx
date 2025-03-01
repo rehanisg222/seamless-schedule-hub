@@ -46,7 +46,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300",
         isScrolled
-          ? "py-3 glass border-b border-white/20"
+          ? "py-3 glass border-b border-gray-200"
           : "py-5 bg-transparent"
       )}
     >

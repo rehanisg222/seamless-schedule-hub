@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
@@ -40,18 +39,18 @@ const Index = () => {
             <div>
               <div className="text-left">
                 <h2 className="text-4xl md:text-5xl font-bold text-black mb-2 font-sans tracking-tight">TOTAL REVENUE GENERATED</h2>
-                <h3 className="text-5xl md:text-7xl font-bold text-[#FF4D8F] mb-10 font-serif tracking-tighter">$63.4 MILLION</h3>
+                <h3 className="text-5xl md:text-7xl font-bold text-[#FF4D8F] mb-10 font-serif tracking-tighter">$170,000</h3>
               </div>
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-[#110027] rounded-lg p-6">
-                  <h4 className="text-white text-lg uppercase mb-1 font-semibold">CLIENTS HELPED</h4>
-                  <p className="text-5xl font-bold text-[#FF4D8F]">57</p>
+                  <h4 className="text-white text-lg uppercase mb-1 font-semibold">APPOINTMENTS BOOKED</h4>
+                  <p className="text-5xl font-bold text-[#FF4D8F]">500</p>
                 </div>
                 
                 <div className="bg-[#110027] rounded-lg p-6">
                   <h4 className="text-white text-lg uppercase mb-1 font-semibold">TOTAL AD SPEND</h4>
-                  <p className="text-5xl font-bold text-[#FF4D8F]">$14.7M</p>
+                  <p className="text-5xl font-bold text-[#FF4D8F]">$11K</p>
                 </div>
                 
                 <div className="bg-[#110027] rounded-lg p-6">
@@ -61,7 +60,7 @@ const Index = () => {
                 
                 <div className="bg-[#110027] rounded-lg p-6">
                   <h4 className="text-white text-lg uppercase mb-1 font-semibold">SERVICES OFFER</h4>
-                  <p className="text-5xl font-bold text-[#FF4D8F]">1</p>
+                  <p className="text-5xl font-bold text-[#FF4D8F]">3</p>
                 </div>
               </div>
             </div>

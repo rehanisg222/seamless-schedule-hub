@@ -1,25 +1,24 @@
+
 import { Link } from "react-router-dom";
 import { Container } from "@/components/ui/Container";
-import { Mail, MapPin, Phone, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Mail, Phone, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  // Get the logo path from the window object
-  const logoPath = (window as any).appLogo;
+  // Get the logo path
+  const logoPath = "/lovable-uploads/313741fe-9141-4987-9744-a588a0c01995.png";
 
   return (
     <footer style={{ backgroundColor: "#300319" }} className="pt-16 pb-10 border-t border-opacity-20 border-blue-900">
       <Container>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           <div className="space-y-4">
             <div className="flex items-center">
-              {logoPath && (
-                <img 
-                  src={logoPath} 
-                  alt="Growthstermedia Logo" 
-                  className="h-8 mr-2" 
-                />
-              )}
+              <img 
+                src={logoPath} 
+                alt="Growthstermedia Logo" 
+                className="h-8 mr-2" 
+              />
               <h3 className="text-lg font-semibold text-white">
                 Growth<span className="text-blue-300">ster</span>media
               </h3>
@@ -91,40 +90,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-base font-semibold mb-4 text-white">Services</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/services" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Instagram Marketing
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Facebook Advertising
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Content Creation
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Social Media Analytics
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
             <h3 className="text-base font-semibold mb-4 text-white">Contact</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin size={18} className="mr-2 text-blue-300 shrink-0 mt-0.5" />
-                <span className="text-sm text-blue-300">
-                  123 Social Ave, Suite 100, San Francisco, CA 94107
-                </span>
-              </li>
               <li className="flex items-center">
                 <Phone size={18} className="mr-2 text-blue-300 shrink-0" />
                 <a href="tel:+11234567890" className="text-sm text-blue-300 hover:text-white transition-colors">

@@ -34,25 +34,42 @@ const Index = () => {
   return (
     <>
       <Hero />
-      <Services />
       
-      {/* Stats Section - Improved styling */}
+      {/* Services Section (moved up) */}
+      <section className="section-padding bg-black">
+        <Container>
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our Services</h2>
+            <p className="text-gray-300 text-lg">
+              Comprehensive social media solutions designed to help your business grow its online presence and drive real business results.
+            </p>
+          </div>
+          
+          <img 
+            src="/lovable-uploads/9217956f-9b93-43c8-b7a0-f0c8c6d6d7c8.png" 
+            alt="Our Services" 
+            className="w-full max-w-5xl mx-auto rounded-lg"
+          />
+        </Container>
+      </section>
+      
+      {/* Stats Section - Updated with new layout and values */}
       <section className="py-16 relative" style={{ backgroundColor: "#300319" }}>
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 font-sans tracking-tight">TOTAL REVENUE GENERATED</h2>
-            <h3 className="text-5xl md:text-7xl font-bold text-[#D946EF] mb-10 font-serif tracking-tighter">$63.4 MILLION</h3>
+            <h3 className="text-5xl md:text-7xl font-bold text-[#D946EF] mb-10 font-serif tracking-tighter">$170,000</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
-              <h4 className="stats-label font-sans tracking-wide">CLIENTS HELPED</h4>
-              <p className="stats-value font-serif">57</p>
+              <h4 className="stats-label font-sans tracking-wide">APPOINTMENTS BOOKED</h4>
+              <p className="stats-value font-serif">500</p>
             </div>
             
             <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
               <h4 className="stats-label font-sans tracking-wide">TOTAL AD SPEND</h4>
-              <p className="stats-value font-serif">$14.7M</p>
+              <p className="stats-value font-serif">$11K</p>
             </div>
             
             <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
@@ -62,7 +79,7 @@ const Index = () => {
             
             <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
               <h4 className="stats-label font-sans tracking-wide">SERVICES OFFER</h4>
-              <p className="stats-value font-serif">1</p>
+              <p className="stats-value font-serif">3</p>
             </div>
           </div>
           
@@ -70,13 +87,13 @@ const Index = () => {
             <div className="max-w-xl text-white">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 font-sans tracking-tight text-[#9b87f5]">Our Philosophy</h3>
               <p className="text-lg mb-4 leading-relaxed font-light">
-                At Growthstermedia, we've collaborated with industry leaders to generate millions in returns on ad spend. We eliminate the inefficiencies and unnecessary formalities that burden most agencies.
+                At Growthstermedia, we partner with business leaders to generate substantial returns on advertising investments. Our approach eliminates unnecessary bureaucracy that slows down most agencies.
               </p>
               <p className="text-lg mb-6 leading-relaxed font-light">
-                Our client success stories are unmatched, our waitlist continues to grow, and we carefully select clients who align with our approach to digital growth.
+                We've built an impressive portfolio of client successes, our waitlist continues to expand, and we're selective about partnering with businesses that align with our growth-focused approach.
               </p>
               <p className="text-xl font-medium italic">
-                Maybe that's you — it would be our honor to discover if we're the right fit. Schedule your complimentary discovery call today.
+                You might be the perfect fit — we'd be honored to explore this possibility together. Book your free discovery call today.
               </p>
             </div>
             

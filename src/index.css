@@ -101,7 +101,7 @@
   
   /* Stats section styling - Enhanced */
   .stats-card {
-    @apply bg-blue-950/80 p-8 rounded-xl text-center transition-all backdrop-blur-sm border border-purple-900/30;
+    @apply bg-[#190010] p-8 rounded-xl text-center transition-all backdrop-blur-sm border border-purple-900/30;
     box-shadow: 0 10px 30px -5px rgba(76, 29, 149, 0.1);
   }
   

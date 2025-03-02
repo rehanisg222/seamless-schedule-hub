@@ -36,56 +36,56 @@ const Index = () => {
       <Hero />
       <Services />
       
-      {/* Stats Section - Based on first attachment */}
-      <section className="py-16" style={{ backgroundColor: "#300319" }}>
+      {/* Stats Section - Improved styling */}
+      <section className="py-16 relative" style={{ backgroundColor: "#300319" }}>
         <Container>
-          <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">TOTAL REVENUE GENERATED</h2>
-            <h3 className="text-5xl md:text-7xl font-bold text-pink-500 mb-8">$63.4 MILLION</h3>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 font-sans tracking-tight">TOTAL REVENUE GENERATED</h2>
+            <h3 className="text-5xl md:text-7xl font-bold text-[#D946EF] mb-10 font-serif tracking-tighter">$63.4 MILLION</h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-blue-950 p-6 rounded-lg text-center">
-              <h4 className="text-xl font-bold text-white mb-4">CLIENTS HELPED</h4>
-              <p className="text-4xl md:text-6xl font-bold text-pink-500">57</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
+              <h4 className="stats-label font-sans tracking-wide">CLIENTS HELPED</h4>
+              <p className="stats-value font-serif">57</p>
             </div>
             
-            <div className="bg-blue-950 p-6 rounded-lg text-center">
-              <h4 className="text-xl font-bold text-white mb-4">TOTAL AD SPEND</h4>
-              <p className="text-4xl md:text-6xl font-bold text-pink-500">$14.7M</p>
+            <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
+              <h4 className="stats-label font-sans tracking-wide">TOTAL AD SPEND</h4>
+              <p className="stats-value font-serif">$14.7M</p>
             </div>
             
-            <div className="bg-blue-950 p-6 rounded-lg text-center">
-              <h4 className="text-xl font-bold text-white mb-4">OFFICES</h4>
-              <p className="text-4xl md:text-6xl font-bold text-pink-500">0</p>
+            <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
+              <h4 className="stats-label font-sans tracking-wide">OFFICES</h4>
+              <p className="stats-value font-serif">0</p>
             </div>
             
-            <div className="bg-blue-950 p-6 rounded-lg text-center">
-              <h4 className="text-xl font-bold text-white mb-4">SERVICES OFFER</h4>
-              <p className="text-4xl md:text-6xl font-bold text-pink-500">1</p>
+            <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
+              <h4 className="stats-label font-sans tracking-wide">SERVICES OFFER</h4>
+              <p className="stats-value font-serif">1</p>
             </div>
           </div>
           
-          <div className="mt-12 flex flex-col md:flex-row gap-8 items-center justify-between">
+          <div className="mt-16 flex flex-col md:flex-row gap-8 items-center justify-between">
             <div className="max-w-xl text-white">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Philosophy</h3>
-              <p className="text-lg mb-4">
-                At Growthstermedia, we've worked with the best in the industry to produce millions of dollars in return on ad spend. We do away with inefficiencies and formalities that plague most agencies.
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 font-sans tracking-tight text-[#9b87f5]">Our Philosophy</h3>
+              <p className="text-lg mb-4 leading-relaxed font-light">
+                At Growthstermedia, we've collaborated with industry leaders to generate millions in returns on ad spend. We eliminate the inefficiencies and unnecessary formalities that burden most agencies.
               </p>
-              <p className="text-lg mb-6">
-                Our client case studies have become legendary, our waiting list is longer than your complaints with your current agency, and we look for a very specific kind of client.
+              <p className="text-lg mb-6 leading-relaxed font-light">
+                Our client success stories are unmatched, our waitlist continues to grow, and we carefully select clients who align with our approach to digital growth.
               </p>
-              <p className="text-xl font-semibold">
-                Maybe that's you: it would be our honor to find out. Schedule your FREE discovery call below.
+              <p className="text-xl font-medium italic">
+                Maybe that's you — it would be our honor to discover if we're the right fit. Schedule your complimentary discovery call today.
               </p>
             </div>
             
             <a 
               href="/booking" 
-              className="px-8 py-4 rounded-full bg-purple-600 text-white text-lg font-medium hover:bg-purple-700 transition-colors text-center"
+              className="px-8 py-4 rounded-full bg-[#8B5CF6] text-white text-lg font-medium hover:bg-[#7E69AB] transition-colors text-center shadow-lg shadow-purple-900/30 group"
             >
-              Speak To Our Team Today
-              <div className="text-sm">Schedule Your FREE Audit Call Now</div>
+              <div className="font-bold tracking-wide group-hover:translate-x-1 transition-transform">Speak To Our Team Today</div>
+              <div className="text-sm mt-1 opacity-90">Schedule Your FREE Audit Call Now</div>
             </a>
           </div>
         </Container>

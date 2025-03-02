@@ -8,7 +8,7 @@ interface LogoProps {
 }
 
 export const Logo = ({ className, size = "md", withText = true }: LogoProps) => {
-  const logoPath = "/lovable-uploads/5de5d693-f719-4918-9142-ea1838742673.png";
+  const logoPath = "/lovable-uploads/e521e155-4098-4fb2-83a2-18133d5d8860.png";
   
   const sizeClasses = {
     sm: "h-8",

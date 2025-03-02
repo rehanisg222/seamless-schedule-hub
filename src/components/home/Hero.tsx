@@ -91,8 +91,8 @@ export function Hero() {
           
           <div className="flex justify-center items-center">
             <img 
-              src="/lovable-uploads/506d9731-da39-4092-84d7-4b0c42a6356d.png" 
-              alt="Wizard" 
+              src="/lovable-uploads/0c88b053-e276-48f4-98a9-7f5aa7c4c108.png" 
+              alt="Growthstermedia Logo" 
               className="w-full max-w-md h-auto animate-fade-in rounded-lg shadow-xl" 
               style={{ animationDelay: "0.4s" }}
             />

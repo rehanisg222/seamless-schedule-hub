@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
-import { Services } from "@/components/home/Services";
 import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
@@ -35,26 +34,8 @@ const Index = () => {
     <>
       <Hero />
       
-      {/* Services Section (moved up) */}
-      <section className="section-padding bg-black">
-        <Container>
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our Services</h2>
-            <p className="text-gray-300 text-lg">
-              Comprehensive social media solutions designed to help your business grow its online presence and drive real business results.
-            </p>
-          </div>
-          
-          <img 
-            src="/lovable-uploads/9217956f-9b93-43c8-b7a0-f0c8c6d6d7c8.png" 
-            alt="Our Services" 
-            className="w-full max-w-5xl mx-auto rounded-lg"
-          />
-        </Container>
-      </section>
-      
-      {/* Stats Section - Updated with new layout and values */}
-      <section className="py-16 relative" style={{ backgroundColor: "#300319" }}>
+      {/* Stats Section - Updated with new layout from the 4th attachment */}
+      <section className="stats-container">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 font-sans tracking-tight">TOTAL REVENUE GENERATED</h2>

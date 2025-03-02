@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,6 +96,11 @@
   
   .blue-gradient {
     @apply bg-gradient-to-r from-primary to-primary/70;
+  }
+  
+  /* New styles for the philosophy section */
+  .philosophy-stat-card {
+    @apply bg-[#110027] rounded-lg p-6 transition-all hover:shadow-lg hover:shadow-purple-700/20;
   }
   
   /* Stats section styling - Enhanced */

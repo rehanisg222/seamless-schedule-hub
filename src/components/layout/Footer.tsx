@@ -5,6 +5,8 @@ import { Mail, Phone, Instagram, Twitter, Linkedin, Facebook } from "lucide-reac
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  // Get the logo path
+  const logoPath = "/lovable-uploads/313741fe-9141-4987-9744-a588a0c01995.png";
 
   return (
     <footer style={{ backgroundColor: "#300319" }} className="pt-16 pb-10 border-t border-opacity-20 border-blue-900">
@@ -13,7 +15,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/0c88b053-e276-48f4-98a9-7f5aa7c4c108.png" 
+                src={logoPath} 
                 alt="Growthstermedia Logo" 
                 className="h-8 mr-2" 
               />

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,6 +79,7 @@
     @apply opacity-100 translate-y-0;
   }
 
+  /* Updated counter animation */
   .counter-element {
     counter-reset: count 0;
     animation: counter-animation 2s forwards;
@@ -97,24 +99,7 @@
     @apply bg-gradient-to-r from-primary to-primary/70;
   }
   
-  .stats-container {
-    background-color: #300319;
-    @apply py-16 px-4;
-  }
-
-  .stats-heading {
-    @apply text-4xl md:text-5xl font-bold text-white mb-3 text-center;
-  }
-
-  .stats-value-main {
-    @apply text-5xl md:text-7xl font-bold text-[#D946EF] mb-10 text-center;
-    font-family: serif;
-  }
-
-  .stats-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
-  }
-
+  /* Stats section styling - Enhanced */
   .stats-card {
     @apply bg-[#190010] p-8 rounded-xl text-center transition-all backdrop-blur-sm border border-purple-900/30;
     box-shadow: 0 10px 30px -5px rgba(76, 29, 149, 0.1);
@@ -123,7 +108,7 @@
   .stats-value {
     @apply text-5xl md:text-6xl font-bold text-[#D946EF] mb-2;
     text-shadow: 0 0 10px rgba(217, 70, 239, 0.3);
-    font-family: serif;
+    letter-spacing: -0.05em;
   }
   
   .stats-label {
@@ -131,23 +116,7 @@
     letter-spacing: 0.05em;
   }
   
-  .philosophy-heading {
-    @apply text-2xl md:text-3xl font-bold mb-4 text-[#9b87f5];
-  }
-  
-  .philosophy-text {
-    @apply text-lg mb-4 leading-relaxed font-light text-white;
-  }
-  
-  .philosophy-highlight {
-    @apply text-xl font-medium italic text-white;
-  }
-  
-  .cta-button {
-    @apply px-8 py-4 rounded-full bg-[#8B5CF6] text-white text-lg font-medium 
-    hover:bg-[#7E69AB] transition-colors text-center shadow-lg shadow-purple-900/30 group;
-  }
-  
+  /* Calendly widget styling */
   .calendly-inline-widget {
     min-width: 320px;
     height: 630px;

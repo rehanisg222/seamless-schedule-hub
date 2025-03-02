@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
@@ -6,7 +5,6 @@ import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
 import { ArrowRight } from "lucide-react";
-
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
@@ -23,38 +21,22 @@ const Index = () => {
     script.async = true;
     script.onload = () => setCalendarLoaded(true);
     document.body.appendChild(script);
-
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
     };
   }, []);
-
-  return (
-    <>
+  return <>
       <Hero />
       
       {/* Services Section (moved up) */}
-      <section className="section-padding bg-black">
-        <Container>
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our Services</h2>
-            <p className="text-gray-300 text-lg">
-              Comprehensive social media solutions designed to help your business grow its online presence and drive real business results.
-            </p>
-          </div>
-          
-          <img 
-            src="/lovable-uploads/9217956f-9b93-43c8-b7a0-f0c8c6d6d7c8.png" 
-            alt="Our Services" 
-            className="w-full max-w-5xl mx-auto rounded-lg"
-          />
-        </Container>
-      </section>
+      
       
       {/* Stats Section - Updated with new layout and values */}
-      <section className="py-16 relative" style={{ backgroundColor: "#300319" }}>
+      <section className="py-16 relative" style={{
+      backgroundColor: "#300319"
+    }}>
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 font-sans tracking-tight">TOTAL REVENUE GENERATED</h2>
@@ -62,12 +44,12 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
+            <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20 bg-zinc-200">
               <h4 className="stats-label font-sans tracking-wide">APPOINTMENTS BOOKED</h4>
               <p className="stats-value font-serif">500</p>
             </div>
             
-            <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20">
+            <div className="stats-card transform transition duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-900/20 bg-slate-900">
               <h4 className="stats-label font-sans tracking-wide">TOTAL AD SPEND</h4>
               <p className="stats-value font-serif">$11K</p>
             </div>
@@ -97,10 +79,7 @@ const Index = () => {
               </p>
             </div>
             
-            <a 
-              href="/booking" 
-              className="px-8 py-4 rounded-full bg-[#8B5CF6] text-white text-lg font-medium hover:bg-[#7E69AB] transition-colors text-center shadow-lg shadow-purple-900/30 group"
-            >
+            <a href="/booking" className="px-8 py-4 rounded-full bg-[#8B5CF6] text-white text-lg font-medium hover:bg-[#7E69AB] transition-colors text-center shadow-lg shadow-purple-900/30 group">
               <div className="font-bold tracking-wide group-hover:translate-x-1 transition-transform">Speak To Our Team Today</div>
               <div className="text-sm mt-1 opacity-90">Schedule Your FREE Audit Call Now</div>
             </a>
@@ -120,11 +99,10 @@ const Index = () => {
             </div>
             
             <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-              <div 
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/growthstermedia/30min"
-                style={{ minWidth: '320px', height: '630px' }}
-              ></div>
+              <div className="calendly-inline-widget" data-url="https://calendly.com/growthstermedia/30min" style={{
+              minWidth: '320px',
+              height: '630px'
+            }}></div>
             </div>
           </div>
         </Container>
@@ -132,12 +110,7 @@ const Index = () => {
       
       <TeamSection />
       
-      <AppointmentModal
-        isOpen={isAppointmentModalOpen}
-        onClose={() => setIsAppointmentModalOpen(false)}
-      />
-    </>
-  );
+      <AppointmentModal isOpen={isAppointmentModalOpen} onClose={() => setIsAppointmentModalOpen(false)} />
+    </>;
 };
-
 export default Index;

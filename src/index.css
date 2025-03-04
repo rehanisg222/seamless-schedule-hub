@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -127,5 +128,18 @@
     background-color: white;
     border-radius: 0.75rem;
     overflow: hidden;
+  }
+  
+  /* What We Offer section styles */
+  .service-crossed {
+    @apply flex items-center gap-2 text-white opacity-80;
+  }
+  
+  .service-crossed-icon {
+    @apply w-5 h-5 rounded-full bg-[#FF4D8F] flex items-center justify-center;
+  }
+  
+  .pink-heading {
+    @apply text-[#FF4D8F] font-bold tracking-tight;
   }
 }

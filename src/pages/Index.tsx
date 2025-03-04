@@ -1,10 +1,12 @@
+
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
 import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
+
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
@@ -115,6 +117,63 @@ const Index = () => {
               minWidth: '320px',
               height: '630px'
             }}></div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* What We Offer Section - Added based on the image */}
+      <section className="py-16 relative" style={{ backgroundColor: "#110027" }}>
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="text-white">
+              <h2 className="text-2xl font-medium mb-2">What we offer</h2>
+              <h3 className="text-5xl md:text-6xl font-bold text-[#FF4D8F] mb-6">PAID ADVERTISING</h3>
+              <p className="text-xl mb-6">Ads. Just Ads.</p>
+              
+              <div className="space-y-6">
+                <p className="text-lg">
+                  We do one thing - we just do it with a monastic focus and better than anyone else. If you want an agency that offers a full service solution of everything that won't move the needle forward, we're not for you.
+                </p>
+                
+                <p className="text-lg">
+                  If you want an agency where with two clicks, you can get a clear breakdown of how much was spent, how much was made & what your net profit was - we're for you.
+                </p>
+              </div>
+              
+              <div className="mt-10">
+                <a href="/booking" className="inline-block px-8 py-4 rounded-full bg-[#D946EF] text-white text-lg font-medium hover:bg-[#C026D3] transition-colors shadow-lg">
+                  <div className="font-bold tracking-wide">Speak To Our Team Today</div>
+                  <div className="text-sm opacity-90">Schedule Your FREE Audit Call Now</div>
+                </a>
+              </div>
+            </div>
+            
+            <div className="text-white">
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold mb-4">MASTERY DEMANDS FOCUS SO....</h3>
+                <p className="text-xl mb-6">
+                  We don't offer any other services except for <span className="italic">paid advertising</span>...
+                </p>
+              </div>
+              
+              <ul className="space-y-4">
+                {[
+                  "WEBDESIGN", 
+                  "CONTENT CREATION", 
+                  "EMAIL MARKETING", 
+                  "SOCIAL MEDIA MANAGEMENT", 
+                  "INSTAGRAM GROWTH", 
+                  "PR SERVICE"
+                ].map((service, index) => (
+                  <li key={index} className="flex items-center text-xl font-medium">
+                    <span className="inline-flex items-center justify-center w-6 h-6 bg-[#FF4D8F] rounded-full mr-3">
+                      <X size={14} />
+                    </span>
+                    {service}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Container>

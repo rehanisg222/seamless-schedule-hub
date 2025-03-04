@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
@@ -6,7 +5,6 @@ import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
 import { ArrowRight, X } from "lucide-react";
-
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
@@ -29,7 +27,6 @@ const Index = () => {
       }
     };
   }, []);
-  
   return <>
       <Hero />
       
@@ -61,7 +58,7 @@ const Index = () => {
                 
                 <div className="bg-[#110027] rounded-lg p-6">
                   <h4 className="text-white text-lg uppercase mb-1 font-semibold">SERVICES OFFER</h4>
-                  <p className="text-5xl font-bold text-[#FF4D8F]">3</p>
+                  <p className="text-5xl font-bold text-[#FF4D8F]">1</p>
                 </div>
               </div>
             </div>
@@ -87,7 +84,9 @@ const Index = () => {
       </section>
       
       {/* What We Offer Section - Moved above Calendly */}
-      <section className="py-16 relative" style={{ backgroundColor: "#110027" }}>
+      <section className="py-16 relative" style={{
+      backgroundColor: "#110027"
+    }}>
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="text-white">
@@ -122,21 +121,12 @@ const Index = () => {
               </div>
               
               <ul className="space-y-4">
-                {[
-                  "WEBDESIGN", 
-                  "CONTENT CREATION", 
-                  "EMAIL MARKETING", 
-                  "SOCIAL MEDIA MANAGEMENT", 
-                  "INSTAGRAM GROWTH", 
-                  "PR SERVICE"
-                ].map((service, index) => (
-                  <li key={index} className="flex items-center text-xl font-medium">
+                {["WEBDESIGN", "CONTENT CREATION", "EMAIL MARKETING", "SOCIAL MEDIA MANAGEMENT", "INSTAGRAM GROWTH", "PR SERVICE"].map((service, index) => <li key={index} className="flex items-center text-xl font-medium">
                     <span className="inline-flex items-center justify-center w-6 h-6 bg-[#FF4D8F] rounded-full mr-3">
                       <X size={14} />
                     </span>
                     {service}
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </div>
@@ -169,5 +159,4 @@ const Index = () => {
       <AppointmentModal isOpen={isAppointmentModalOpen} onClose={() => setIsAppointmentModalOpen(false)} />
     </>;
 };
-
 export default Index;

@@ -1,31 +1,17 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronRight, Moon, Sun } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [theme, setTheme] = useState("default");
   const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "default" ? "futuristic" : "default";
-    setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "default";
-    setTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,32 +52,17 @@ export function Navbar() {
     >
       <Container>
         <nav className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Link
-              to="/"
-              className="flex items-center text-xl md:text-2xl font-semibold tracking-tight transition-colors"
-            >
-              <img 
-                src="/lovable-uploads/e521e155-4098-4fb2-83a2-18133d5d8860.png" 
-                alt="Growthstermedia Logo" 
-                className="h-10 md:h-12 mr-2" 
-              />
-              <span className="sr-only">Growthstermedia Logo</span>
-            </Link>
-            
-            {/* Theme Toggle Button */}
-            <button 
-              onClick={toggleTheme}
-              className="ml-3 p-2 rounded-full bg-primary/10 backdrop-blur-sm hover:bg-primary/20 transition-all duration-300 border border-white/10"
-              aria-label="Toggle theme"
-            >
-              {theme === "default" ? (
-                <Moon size={18} className="text-white" />
-              ) : (
-                <Sun size={18} className="text-white" />
-              )}
-            </button>
-          </div>
+          <Link
+            to="/"
+            className="flex items-center text-xl md:text-2xl font-semibold tracking-tight transition-colors"
+          >
+            <img 
+              src="/lovable-uploads/e521e155-4098-4fb2-83a2-18133d5d8860.png" 
+              alt="Growthstermedia Logo" 
+              className="h-10 md:h-12 mr-2" 
+            />
+            <span className="sr-only">Growthstermedia Logo</span>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-6">

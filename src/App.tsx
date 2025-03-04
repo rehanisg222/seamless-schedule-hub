@@ -46,26 +46,6 @@ const App = () => {
     };
   }, []);
 
-  // Listen for theme changes and dispatch an event
-  useEffect(() => {
-    const handleThemeChange = () => {
-      const event = new Event('themeChange');
-      document.dispatchEvent(event);
-    };
-    
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
-          handleThemeChange();
-        }
-      });
-    });
-    
-    observer.observe(document.documentElement, { attributes: true });
-    
-    return () => observer.disconnect();
-  }, []);
-
   // Export logo for use in other components
   (window as any).appLogo = logoPath;
 

@@ -29,10 +29,11 @@ const Index = () => {
       }
     };
   }, []);
+  
   return <>
       <Hero />
       
-      {/* Our Philosophy Section - Added based on the image */}
+      {/* Our Philosophy Section */}
       <section className="py-16 bg-white">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -50,7 +51,7 @@ const Index = () => {
                 
                 <div className="bg-[#110027] rounded-lg p-6">
                   <h4 className="text-white text-lg uppercase mb-1 font-semibold">TOTAL AD SPEND</h4>
-                  <p className="text-5xl font-bold text-[#FF4D8F]">$11K</p>
+                  <p className="text-5xl font-bold text-[#FF4D8F]">$10.1K</p>
                 </div>
                 
                 <div className="bg-[#110027] rounded-lg p-6">
@@ -76,7 +77,7 @@ const Index = () => {
               <p className="text-xl font-medium mb-8 text-gray-800">
                 Maybe that's you: it would be our honour to find out. Schedule your FREE discovery call below.
               </p>
-              <a href="/booking" className="inline-block px-8 py-4 rounded-full bg-[#D946EF] text-white text-lg font-medium hover:bg-[#C026D3] transition-colors shadow-lg shadow-purple-500/30">
+              <a href="#calendly-section" className="inline-block px-8 py-4 rounded-full bg-[#D946EF] text-white text-lg font-medium hover:bg-[#C026D3] transition-colors shadow-lg shadow-purple-500/30">
                 <div className="font-bold tracking-wide">Speak To Our Team Today</div>
                 <div className="text-sm opacity-90">Schedule Your FREE Audit Call Now</div>
               </a>
@@ -85,44 +86,7 @@ const Index = () => {
         </Container>
       </section>
       
-      {/* Stats Section - Updated with new layout and values */}
-      <section className="py-16 relative" style={{
-      backgroundColor: "#300319"
-    }}>
-        <Container>
-          <div className="text-center mb-12">
-            
-            
-          </div>
-          
-          
-          
-          
-        </Container>
-      </section>
-      
-      {/* CTA Section with Embedded Calendly */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <Container>
-          <div className="flex flex-col">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold">Ready to Grow Your Social Media Presence?</h2>
-              <p className="mt-2 text-primary-foreground/80 max-w-2xl mx-auto">
-                Book a free strategy call now and discover how we can boost your brand's online visibility.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-              <div className="calendly-inline-widget" data-url="https://calendly.com/growthstermedia/30min" style={{
-              minWidth: '320px',
-              height: '630px'
-            }}></div>
-            </div>
-          </div>
-        </Container>
-      </section>
-      
-      {/* What We Offer Section - Added based on the image */}
+      {/* What We Offer Section - Moved above Calendly */}
       <section className="py-16 relative" style={{ backgroundColor: "#110027" }}>
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -142,7 +106,7 @@ const Index = () => {
               </div>
               
               <div className="mt-10">
-                <a href="/booking" className="inline-block px-8 py-4 rounded-full bg-[#D946EF] text-white text-lg font-medium hover:bg-[#C026D3] transition-colors shadow-lg">
+                <a href="#calendly-section" className="inline-block px-8 py-4 rounded-full bg-[#D946EF] text-white text-lg font-medium hover:bg-[#C026D3] transition-colors shadow-lg">
                   <div className="font-bold tracking-wide">Speak To Our Team Today</div>
                   <div className="text-sm opacity-90">Schedule Your FREE Audit Call Now</div>
                 </a>
@@ -179,9 +143,31 @@ const Index = () => {
         </Container>
       </section>
       
+      {/* CTA Section with Embedded Calendly */}
+      <section id="calendly-section" className="py-16 bg-primary text-primary-foreground">
+        <Container>
+          <div className="flex flex-col">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold">Ready to Grow Your Social Media Presence?</h2>
+              <p className="mt-2 text-primary-foreground/80 max-w-2xl mx-auto">
+                Book a free strategy call now and discover how we can boost your brand's online visibility.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+              <div className="calendly-inline-widget" data-url="https://calendly.com/growthstermedia/30min" style={{
+              minWidth: '320px',
+              height: '630px'
+            }}></div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
       <TeamSection />
       
       <AppointmentModal isOpen={isAppointmentModalOpen} onClose={() => setIsAppointmentModalOpen(false)} />
     </>;
 };
+
 export default Index;

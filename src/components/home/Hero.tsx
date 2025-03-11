@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Link } from "react-router-dom";
@@ -71,17 +70,29 @@ export function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in" style={{
             animationDelay: "0.1s"
           }}>
-              Elevate Your Brand With Strategic Social Media Marketing
+              MODERN DAY ALCHEMY
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[#FF4D8F] mb-6 animate-fade-in" style={{
             animationDelay: "0.2s"
           }}>
-              We help businesses grow their audience, increase engagement, and drive conversions through data-driven social media strategies.
+              We Help E-commerce & Info Product Businesses Produce Spine-Chilling ROI Via Paid Advertising
+            </h2>
+            
+            <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{
+            animationDelay: "0.3s"
+          }}>
+              Stop wasting time and money on faulty and ineffective ad campaigns.
+            </p>
+            
+            <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{
+            animationDelay: "0.4s"
+          }}>
+              It's time to make your ad-budget count, scale your business and blow up your sales.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in" style={{
-            animationDelay: "0.3s"
+            animationDelay: "0.5s"
           }}>
               <a href="#calendly-section" onClick={scrollToCalendly} className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                 Book a Strategy Call

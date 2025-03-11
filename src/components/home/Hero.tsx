@@ -59,10 +59,7 @@ export function Hero() {
       <Container className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
           <div className="text-center md:text-left">
-            <div className="inline-flex items-center px-3 py-1 mb-4 rounded-full border border-border bg-secondary text-sm font-medium animate-fade-in">
-              <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2"></span>
-              Transforming social media presence since 2023
-            </div>
+            
             
             <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-2 text-white animate-fade-in" style={{
             animationDelay: "0.05s"

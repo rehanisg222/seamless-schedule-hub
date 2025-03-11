@@ -54,46 +54,36 @@ export function Hero() {
     }
   };
 
-  return <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden" style={{ backgroundColor: '#110027' }}>
+  return <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#110027] to-[#110027]/50"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#110027] to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background to-background/50"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
       </div>
       
       <Container className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
           <div className="text-center md:text-left">
-            <div className="inline-flex items-center px-3 py-1 mb-6 rounded-full border border-[#FF4D8F]/20 bg-[#110027] text-sm font-medium text-white animate-fade-in">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#FF4D8F] mr-2"></span>
-              MODERN DAY ALCHEMY
+            <div className="inline-flex items-center px-3 py-1 mb-6 rounded-full border border-border bg-secondary text-sm font-medium animate-fade-in">
+              <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2"></span>
+              Transforming social media presence since 2023
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in text-[#FF4D8F]" style={{
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in" style={{
             animationDelay: "0.1s"
           }}>
-              We Help E-commerce & Info<br />
-              Product Businesses Produce<br />
-              Spine-Chilling ROI Via Paid<br />
-              Advertising
+              Elevate Your Brand With Strategic Social Media Marketing
             </h1>
             
-            <p className="text-xl text-white mb-4 animate-fade-in" style={{
+            <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{
             animationDelay: "0.2s"
           }}>
-              Stop wasting time and money on faulty and ineffective ad campaigns.
-            </p>
-            
-            <p className="text-xl text-white mb-8 animate-fade-in" style={{
-            animationDelay: "0.3s"
-          }}>
-              It's time to make your ad-budget count, scale your
-              business and blow up your sales.
+              We help businesses grow their audience, increase engagement, and drive conversions through data-driven social media strategies.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in" style={{
-            animationDelay: "0.4s"
+            animationDelay: "0.3s"
           }}>
-              <a href="#calendly-section" onClick={scrollToCalendly} className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#FF4D8F] px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#FF4D8F]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+              <a href="#calendly-section" onClick={scrollToCalendly} className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                 Book a Strategy Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
@@ -102,7 +92,7 @@ export function Hero() {
           
           <div className="flex justify-center items-center">
             <img src="/lovable-uploads/506d9731-da39-4092-84d7-4b0c42a6356d.png" alt="Wizard" className="w-full max-w-md h-auto animate-fade-in rounded-lg shadow-xl" style={{
-            animationDelay: "0.5s"
+            animationDelay: "0.4s"
           }} />
           </div>
         </div>

@@ -1,16 +1,15 @@
-
 import React from "react";
-import { Hero } from "@/components/Hero";
-import { Stats } from "@/components/Stats";
-import { Services } from "@/components/Services";
-import { Testimonials } from "@/components/Testimonials";
-import { CTASection } from "@/components/CTASection";
-import { Footer } from "@/components/Footer";
-import { SocialProof } from "@/components/SocialProof";
-import { Philosophy } from "@/components/Philosophy";
-import { CaseStudies } from "@/components/CaseStudies";
+import { Hero } from "@/components/home/Hero";
+import { Stats } from "@/components/home/Stats";
+import { Services } from "@/components/home/Services";
+import { Testimonials } from "@/components/home/Testimonials";
+import { CTASection } from "@/components/home/CTASection";
+import { SocialProof } from "@/components/home/SocialProof";
+import { Philosophy } from "@/components/home/Philosophy";
+import { CaseStudies } from "@/components/home/CaseStudies";
+import { Footer } from "@/components/layout/Footer";
 
-export function Index() {
+export default function Index() {
   return (
     <div className="min-h-screen bg-white">
       <Hero />

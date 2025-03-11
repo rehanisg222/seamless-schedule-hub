@@ -78,7 +78,11 @@ export function Hero() {
             
             
             
-            
+            <p className="text-lg text-muted-foreground mb-3 animate-fade-in" style={{
+            animationDelay: "0.25s"
+          }}>
+              We craft high-converting ad campaigns that turn attention into revenue.
+            </p>
             
             <p className="text-lg text-muted-foreground mb-8 animate-fade-in" style={{
             animationDelay: "0.3s"

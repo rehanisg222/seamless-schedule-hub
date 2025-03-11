@@ -1,7 +1,7 @@
+
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
 import { Services } from "@/components/home/Services";
-import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
 import { ArrowRight, X } from "lucide-react";
@@ -43,7 +43,7 @@ const Index = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-[#110027] rounded-lg p-6">
                   <h4 className="text-white text-lg uppercase mb-1 font-semibold">APPOINTMENTS BOOKED</h4>
-                  <p className="text-5xl font-bold text-[#FF4D8F]">500</p>
+                  <p className="text-5xl font-bold text-[#FF4D8F]">500+</p>
                 </div>
                 
                 <div className="bg-[#110027] rounded-lg p-6">
@@ -153,8 +153,6 @@ const Index = () => {
           </div>
         </Container>
       </section>
-      
-      <TeamSection />
       
       <AppointmentModal isOpen={isAppointmentModalOpen} onClose={() => setIsAppointmentModalOpen(false)} />
     </>;

@@ -76,11 +76,7 @@ export function Hero() {
               We help businesses & brands produce spine-chilling ROI Via Paid Advertising
             </h1>
             
-            <p className="text-lg text-muted-foreground mb-3 animate-fade-in" style={{
-            animationDelay: "0.2s"
-          }}>
-              Struggling to get consistent leads and sales?
-            </p>
+            
             
             <p className="text-lg text-muted-foreground mb-3 animate-fade-in" style={{
             animationDelay: "0.25s"

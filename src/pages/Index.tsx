@@ -3,11 +3,11 @@ import React from "react";
 import { Hero } from "@/components/home/Hero";
 import { Stats } from "@/components/home/Stats";
 import { Services } from "@/components/home/Services";
-import { Testimonials } from "@/components/home/Testimonials";
 import { CTASection } from "@/components/home/CTASection";
 import { SocialProof } from "@/components/home/SocialProof";
 import { Philosophy } from "@/components/home/Philosophy";
 import { CaseStudies } from "@/components/home/CaseStudies";
+import { Testimonials } from "@/components/home/Testimonials";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Index() {

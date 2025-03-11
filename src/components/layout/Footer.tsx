@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Container } from "@/components/ui/Container";
 import { Mail, Phone, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
@@ -48,11 +49,6 @@ export function Footer() {
               <li>
                 <Link to="/services" className="text-sm text-blue-300 hover:text-white transition-colors">
                   Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/team" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Our Team
                 </Link>
               </li>
               <li>

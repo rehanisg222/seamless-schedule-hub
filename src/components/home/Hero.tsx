@@ -71,13 +71,13 @@ export function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in" style={{
             animationDelay: "0.1s"
           }}>
-              Elevate Your Brand With Strategic Social Media Marketing
+              We help businesses & brands produce spine-chilling ROI Via Paid Advertising
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{
             animationDelay: "0.2s"
           }}>
-              We help businesses grow their audience, increase engagement, and drive conversions through data-driven social media strategies.
+              Struggling to get consistent leads and sales? We craft high-converting ad campaigns that turn attention into revenue. It's time to scale your business the smart way-with date data-driven strategies that work.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in" style={{

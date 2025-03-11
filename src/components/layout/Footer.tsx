@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Container } from "@/components/ui/Container";
 import { Mail, Phone, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  // Get the logo path
   const logoPath = "/lovable-uploads/8948be77-10da-46aa-9242-61b1bac9b5d4.png";
+  
   return <footer style={{
     backgroundColor: "#300319"
   }} className="pt-16 pb-10 border-t border-opacity-20 border-blue-900">
@@ -76,8 +77,7 @@ export function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-blue-300 shrink-0" />
-                <a href="mailto:hello@growthstermedia.com" className="text-sm text-blue-300 hover:text-white transition-colors">mail@growthstermedia.com
-              </a>
+                <a href="mailto:hello@growthstermedia.com" className="text-sm text-blue-300 hover:text-white transition-colors">hello@growthstermedia.com</a>
               </li>
             </ul>
           </div>

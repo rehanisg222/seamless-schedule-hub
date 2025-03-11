@@ -1,11 +1,8 @@
-
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { useEffect, useRef } from "react";
-
 export function Hero() {
   const revenueRef = useRef<HTMLHeadingElement>(null);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -44,15 +41,15 @@ export function Hero() {
       }
     };
   }, []);
-  
   const scrollToCalendly = (e: React.MouseEvent) => {
     e.preventDefault();
     const calendlySection = document.getElementById('calendly-section');
     if (calendlySection) {
-      calendlySection.scrollIntoView({ behavior: 'smooth' });
+      calendlySection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   return <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-background to-background/50"></div>
@@ -68,38 +65,34 @@ export function Hero() {
             </div>
             
             <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-2 text-white animate-fade-in" style={{
-              animationDelay: "0.05s"
-            }}>
+            animationDelay: "0.05s"
+          }}>
               MODERN DAY ALCHEMY
             </h2>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-[#FF4D8F] animate-fade-in" style={{
-              animationDelay: "0.1s"
-            }}>
+            <h1 style={{
+            animationDelay: "0.1s"
+          }} className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-[#FF4D8F] animate-fade-in lg:text-4xl">
               We help businesses & brands produce spine-chilling ROI Via Paid Advertising
             </h1>
             
-            <p className="text-lg text-muted-foreground mb-3 animate-fade-in" style={{
-              animationDelay: "0.2s"
-            }}>
-              Struggling to get consistent leads and sales?
-            </p>
+            
             
             <p className="text-lg text-muted-foreground mb-3 animate-fade-in" style={{
-              animationDelay: "0.25s"
-            }}>
+            animationDelay: "0.25s"
+          }}>
               We craft high-converting ad campaigns that turn attention into revenue.
             </p>
             
             <p className="text-lg text-muted-foreground mb-8 animate-fade-in" style={{
-              animationDelay: "0.3s"
-            }}>
+            animationDelay: "0.3s"
+          }}>
               It's time to scale your business the smart way-with date data-driven strategies that work.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 animate-fade-in" style={{
-              animationDelay: "0.35s"
-            }}>
+            animationDelay: "0.35s"
+          }}>
               <a href="#calendly-section" onClick={scrollToCalendly} className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                 Book a Strategy Call
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -109,8 +102,8 @@ export function Hero() {
           
           <div className="flex justify-center items-center">
             <img src="/lovable-uploads/506d9731-da39-4092-84d7-4b0c42a6356d.png" alt="Wizard" className="w-full max-w-md h-auto animate-fade-in rounded-lg shadow-xl" style={{
-              animationDelay: "0.4s"
-            }} />
+            animationDelay: "0.4s"
+          }} />
           </div>
         </div>
       </Container>

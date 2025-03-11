@@ -5,16 +5,15 @@ import { TeamSection } from "@/components/home/TeamSection";
 import { AppointmentModal } from "@/components/shared/AppointmentModal";
 import { Container } from "@/components/ui/Container";
 import { ArrowRight, X } from "lucide-react";
+
 const Index = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
 
-  // Handle scroll restoration on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Load Calendly script
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "https://assets.calendly.com/assets/external/widget.js";
@@ -27,6 +26,7 @@ const Index = () => {
       }
     };
   }, []);
+
   return <>
       <Hero />
       
@@ -48,7 +48,7 @@ const Index = () => {
                 
                 <div className="bg-[#110027] rounded-lg p-6">
                   <h4 className="text-white text-lg uppercase mb-1 font-semibold">TOTAL AD SPEND</h4>
-                  <p className="text-5xl font-bold text-[#FF4D8F]">$10.1K</p>
+                  <p className="text-5xl font-bold text-[#FF4D8F]">$11K</p>
                 </div>
                 
                 <div className="bg-[#110027] rounded-lg p-6">
@@ -66,13 +66,13 @@ const Index = () => {
             <div>
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-black">Our Philosophy</h3>
               <p className="text-lg mb-4 text-gray-700">
-                Here at Growthstermedia, we've worked with the best in the industry to produce millions of dollars in return on ad spend. We do away with the inefficiencies & formalities that plague most agencies.
+                Here at GrowthsterMedia, we've worked with the best in the industry to produce highest return on ad spend. We do away with the inefficiencies & formalities that plague most agencies.
               </p>
               <p className="text-lg mb-8 text-gray-700">
-                Our client case studies have become myth, our waiting list is longer than your complaints with your current agency and we look for a very specific kind of client.
+                We focus on what truly matters—strategies that drive real impact and measurable growth for our clients.
               </p>
               <p className="text-xl font-medium mb-8 text-gray-800">
-                Maybe that's you: it would be our honour to find out. Schedule your FREE discovery call below.
+                Let's see how we can do the same for you. Schedule your FREE discovery call below.
               </p>
               <a href="#calendly-section" className="inline-block px-8 py-4 rounded-full bg-[#D946EF] text-white text-lg font-medium hover:bg-[#C026D3] transition-colors shadow-lg shadow-purple-500/30">
                 <div className="font-bold tracking-wide">Speak To Our Team Today</div>
@@ -159,4 +159,5 @@ const Index = () => {
       <AppointmentModal isOpen={isAppointmentModalOpen} onClose={() => setIsAppointmentModalOpen(false)} />
     </>;
 };
+
 export default Index;

@@ -48,11 +48,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/team" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Our Team
-                </Link>
-              </li>
-              <li>
                 <Link to="/contact" className="text-sm text-blue-300 hover:text-white transition-colors">
                   Contact
                 </Link>
@@ -70,7 +65,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone size={18} className="mr-2 text-blue-300 shrink-0" />
-                <a href="tel:+18240485855" className="text-sm text-blue-300 hover:text-white transition-colors">8240485855</a>
+                <a href="tel:8240485855" className="text-sm text-blue-300 hover:text-white transition-colors">8240485855</a>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-blue-300 shrink-0" />

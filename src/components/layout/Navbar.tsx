@@ -30,9 +30,6 @@ export function Navbar() {
     path: "/services",
     label: "Services"
   }, {
-    path: "/team",
-    label: "Our Team"
-  }, {
     path: "/contact",
     label: "Contact"
   }];
@@ -52,7 +49,9 @@ export function Navbar() {
             {navLinks.map(({
             path,
             label
-          }) => {})}
+          }) => <Link key={path} to={path} className={cn("text-sm font-medium transition-colors hover:text-primary", isActive(path) ? "text-primary" : "text-foreground")}>
+                {label}
+              </Link>)}
             <Link to="/booking" className="ml-4 inline-flex items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
               Book Consultation
               <ChevronRight className="ml-1 h-4 w-4" />

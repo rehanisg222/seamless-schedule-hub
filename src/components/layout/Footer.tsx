@@ -52,11 +52,7 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link to="/booking" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Book Consultation
-                </Link>
-              </li>
+              
             </ul>
           </div>
 

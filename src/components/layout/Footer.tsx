@@ -7,7 +7,7 @@ export function Footer() {
   const logoPath = "/lovable-uploads/8948be77-10da-46aa-9242-61b1bac9b5d4.png";
   return <footer style={{
     backgroundColor: "#300319"
-  }} className="pt-16 pb-10 border-t border-opacity-20 border-blue-900">
+  }} className="pt-16 pb-10 border-t border-opacity-20 border-blue-900 bg-transparent">
       <Container>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           <div className="space-y-4">
@@ -34,19 +34,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
-            
-            <ul className="space-y-2">
-              <li>
-                
-              </li>
-              
-              <li>
-                
-              </li>
-              
-            </ul>
-          </div>
+          
 
           <div>
             <h3 className="text-base font-semibold mb-4 text-white">Contact</h3>

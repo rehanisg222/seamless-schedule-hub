@@ -35,22 +35,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-base font-semibold mb-4 text-white">Quick Links</h3>
+            
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Home
-                </Link>
+                
               </li>
+              
               <li>
-                <Link to="/services" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-sm text-blue-300 hover:text-white transition-colors">
-                  Contact
-                </Link>
+                
               </li>
               
             </ul>

@@ -9,7 +9,7 @@ export function Footer() {
     backgroundColor: "#300319"
   }} className="pt-16 pb-10 border-t border-opacity-20 border-blue-900 bg-transparent">
       <Container>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 rounded-xl">
           <div className="space-y-4">
             <div className="flex items-center">
               <img src={logoPath} alt="Growthstermedia Logo" className="h-12 mr-2" />
